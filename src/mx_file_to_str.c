@@ -1,6 +1,9 @@
 #include "../inc/libmx.h"
 
 char *mx_file_to_str(const char *file) {
+	if (file == NULL) {
+		return NULL;
+	}
 	int fd = open(file, O_RDONLY);
 	if (fd == - 1) return NULL;
 	int file_size = 0;
@@ -10,6 +13,9 @@ char *mx_file_to_str(const char *file) {
 		read_state = read(fd, buf, 1);
 		if (read_state != 0)
 			file_size++;
+	}
+	if (file_size <= 0) {
+		return NULL;
 	}
 	char *str = mx_strnew(file_size);
 	int str_len = 0;

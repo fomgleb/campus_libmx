@@ -5,10 +5,13 @@ char **mx_strsplit(char const *s, char c) {
 		return NULL;
 	}
 	int words_count = mx_count_words(s, c);
+	if (words_count <= 0) {
+		return NULL;
+	}
 	char **words = malloc((words_count + 1) * sizeof(char *));
 	int words_arr_size = 0;
 	int curr_word_start_index = -1;
-	if (words_count == 0 || words == NULL)
+	if (words == NULL)
 		return NULL;
 	for (int i = 0; ; ++i) {
 		if (s[i] != c && curr_word_start_index == -1)
