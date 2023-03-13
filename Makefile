@@ -1,31 +1,47 @@
 BINARYNAME = libmx.a
 
 CC = clang
-CFLAGS = -std=c11 -Wall -Wextra -Werror -Wpedantic -gdwarf-4
+CFLAGS = -std=c11 -Wall -Wextra -Werror -Wpedantic -gdwarf-4 -MMD -MP
 
 OBJDIR = obj
 SRCDIR = src
 
-SOURCES = $(wildcard $(SRCDIR)/*.c)
-OBJECTS = $(addprefix $(OBJDIR)/,$(notdir $(SOURCES:.c=.o)))
+SOURCES = $(subst ./,,$(shell find $(SRCDIR) -name "*.c"))
+OBJECTS = $(subst $(SRCDIR)/,,$(addprefix $(OBJDIR)/, $(SOURCES:.c=.o)))
+DEPENDS = $(subst $(SRCDIR)/,,$(addprefix $(OBJDIR)/, $(SOURCES:.c=.d)))
 
-all: $(BINARYNAME)
+PHONY := all
+all: install
+	@:
 
-$(BINARYNAME): $(OBJDIR) $(SOURCES) $(OBJECTS)
-	ar cr $(BINARYNAME) $(OBJECTS)
+PHONY += install
+install: $(BINARYNAME)
+	@:
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(BINARYNAME): $(SOURCES) $(OBJDIR) $(OBJECTS)
+	@ar cr $@ $(OBJECTS)
+	@printf "$(notdir $@)\tcreated\n"
+
+-include $(DEPENDS)
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c Makefile
+	@mkdir -p $(@D)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJDIR):
-	mkdir -p $(OBJDIR)
+	@mkdir -p $@
 
-uninstall: clean
-	rm -rf $(BINARYNAME)
-
+PHONY += clean
 clean:
-	rm -rf $(OBJDIR)
+	@rm -rf $(OBJDIR)
+	@printf "$(notdir $(BINARYNAME))\t$@ed\n"
 
+PHONY += uninstall
+uninstall: clean
+	@rm -rf $(BINARYNAME)
+	@printf "$(notdir $(BINARYNAME))\t$@ed\n"
+
+PHONY += reinstall
 reinstall: uninstall all
 
-
+.PHONY: $(PHONY)
