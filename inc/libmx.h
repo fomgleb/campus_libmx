@@ -27,6 +27,16 @@ void mx_printerrn(const char *s, int n);
 void mx_printint(int n);
 void mx_printstr(const char *s);
 
+//Memory
+void *mx_memccpy(void *restrict dst, const void *restrict src, int c, size_t n);
+void *mx_memchr(const void *s, int c, size_t n);
+int mx_memcmp(const void *s1, const void *s2, size_t n);
+void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n);
+void *mx_memmove(void *dst, const void *src, size_t len);
+void *mx_memrchr(const void *s, int c, size_t n);
+void *mx_memset(void *b, int c, size_t len);
+void *mx_realloc(void *ptr, size_t size);
+
 // My
 int mx_get_digits_count(int num);
 char *mx_strchr(const char *s, int c);
@@ -44,13 +54,6 @@ bool mx_isalpha(int c);
 
 char *mx_strchr_last(const char *s, int c);
 void mx_reverse_array(char **strarr);
-
-// Need
-
-// INCORRECT
-
-
-
 
 double mx_pow(double n, unsigned int pow);
 int mx_sqrt(int x);
@@ -89,15 +92,3 @@ char *mx_strjoin(char const *s1, char const *s2);
 char *mx_file_to_str(const char *file);
 char *mx_replace_substr(const char *str, const char *sub, const char *replace);
 int mx_read_line(char **lineptr, size_t buf_size, char delim, const int fd); // In progress
-
-void *mx_memset(void *b, int c, size_t len);
-void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n);
-void *mx_memccpy(void *restrict dst, const void *restrict src, int c, size_t n);
-int mx_memcmp(const void *s1, const void *s2, size_t n);
-void *mx_memchr(const void *s, int c, size_t n);
-void *mx_memrchr(const void *s, int c, size_t n);
-// INCORRECT
-// void *mx_memmem(const void *big, size_t big_len, const void *little, size_t little_len);
-void *mx_memmove(void *dst, const void *src, size_t len);
-void *mx_realloc(void *ptr, size_t size);
-
