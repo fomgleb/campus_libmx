@@ -1,4 +1,4 @@
-#include "../../inc/list.h"
+#include "../../inc/libmx.h"
 
 void mx_clear_list(t_list **list) {
 	if (list == NULL) {

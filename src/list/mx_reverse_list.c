@@ -1,4 +1,4 @@
-#include "../../inc/list.h"
+#include "../../inc/libmx.h"
 
 void mx_reverse_list(t_list *head) {
 	void *temp;

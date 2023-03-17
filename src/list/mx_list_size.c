@@ -1,4 +1,4 @@
-#include "../../inc/list.h"
+#include "../../inc/libmx.h"
 
 int mx_list_size(t_list *list) {
 	int list_size = 0;

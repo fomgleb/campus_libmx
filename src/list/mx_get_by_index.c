@@ -1,4 +1,4 @@
-#include "../../inc/list.h"
+#include "../../inc/libmx.h"
 
 t_list *mx_get_by_index(t_list *head, int index) {
     int j = 0;
