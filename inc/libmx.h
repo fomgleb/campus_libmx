@@ -5,18 +5,35 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <fcntl.h>
-
+#include <stdio.h>
+#include <string.h>
 #ifdef __APPLE__
 #include <malloc/malloc.h>
 #endif
-
 #ifdef __linux__
 #include <malloc.h>
 #define malloc_size malloc_usable_size
 #endif
 
-#include <stdio.h>
-#include <string.h>
+//Memory
+void *mx_memccpy(void *restrict dst, const void *restrict src, int c, size_t n);
+void *mx_memchr(const void *s, int c, size_t n);
+int mx_memcmp(const void *s1, const void *s2, size_t n);
+void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n);
+void *mx_memmove(void *dst, const void *src, size_t len);
+void *mx_memrchr(const void *s, int c, size_t n);
+void *mx_memset(void *b, int c, size_t len);
+void *mx_realloc(void *ptr, size_t size);
+
+// Printers
+void mx_print_strarr(char **arr, const char *delim);
+void mx_printchar(char c);
+void mx_printerr(const char *s);
+void mx_printerrch(const char c);
+void mx_printerrn(const char *s, int n);
+void mx_printint(int n);
+void mx_printnstr(const char *string, size_t count);
+void mx_printstr(const char *s);
 
 // String
 int mx_atoi(const char *str);
@@ -50,26 +67,6 @@ char *mx_strncpy(char *dst, const char *src, int len);
 char *mx_strndup(const char *s1, size_t n);
 char *mx_strnew(const int size);
 char **mx_strsplit(char const *s, char c);
-
-// Printers
-void mx_print_strarr(char **arr, const char *delim);
-void mx_printchar(char c);
-void mx_printerr(const char *s);
-void mx_printerrch(const char c);
-void mx_printerrn(const char *s, int n);
-void mx_printint(int n);
-void mx_printnstr(const char *string, size_t count);
-void mx_printstr(const char *s);
-
-//Memory
-void *mx_memccpy(void *restrict dst, const void *restrict src, int c, size_t n);
-void *mx_memchr(const void *s, int c, size_t n);
-int mx_memcmp(const void *s1, const void *s2, size_t n);
-void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n);
-void *mx_memmove(void *dst, const void *src, size_t len);
-void *mx_memrchr(const void *s, int c, size_t n);
-void *mx_memset(void *b, int c, size_t len);
-void *mx_realloc(void *ptr, size_t size);
 
 int mx_get_digits_count(int num);
 bool mx_isspace(char c);
