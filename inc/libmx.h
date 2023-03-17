@@ -18,11 +18,6 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef struct s_list {
-    void *data;
-    struct s_list *next;
-} t_list;
-
 // My
 int mx_get_digits_count(int num);
 char *mx_strchr(const char *s, int c);
@@ -33,18 +28,13 @@ int mx_strarr_len(char **strarr);
 bool mx_isdigit(int c);
 int mx_iterative_search(char **strings, int count, char *searching);
 void mx_printerr(const char *s);
-void mx_pop_index(t_list **list, int index);
-void mx_clear_list(t_list **list);
-t_list *mx_get_by_index(t_list *head, int index);
 bool mx_num_in_str_is_positive(char *str);
 void mx_free_str_arr(char ***str_arr);
 bool mx_isalpha(int c);
 void mx_printerrn(const char *s, int n);
-void mx_pop_node(t_list **head, t_list *node);
 void mx_printerrch(const char c);
 char *mx_strchr_last(const char *s, int c);
 void mx_reverse_array(char **strarr);
-void mx_reverse_list(t_list *head);
 
 // Need
 void mx_printchar(char c);
@@ -101,12 +91,4 @@ void *mx_memrchr(const void *s, int c, size_t n);
 // void *mx_memmem(const void *big, size_t big_len, const void *little, size_t little_len);
 void *mx_memmove(void *dst, const void *src, size_t len);
 void *mx_realloc(void *ptr, size_t size);
-
-t_list *mx_create_node(void *data);
-void mx_push_front(t_list **list, void *data);
-void mx_push_back(t_list **list, void *data);
-void mx_pop_front(t_list **head);
-void mx_pop_back(t_list **head);
-int mx_list_size(t_list *list);
-t_list *mx_sort_list(t_list *lst, bool (*cmp)(void *, void *));
 

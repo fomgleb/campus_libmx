@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "../../inc/list.h"
 
 t_list *mx_sort_list(t_list *lst, bool (*cmp)(void *, void *)) {
 	for (t_list *i = lst; i != NULL; i = i->next) {
