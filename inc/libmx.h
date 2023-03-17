@@ -18,6 +18,15 @@
 #include <stdio.h>
 #include <string.h>
 
+// Printers
+void mx_print_strarr(char **arr, const char *delim);
+void mx_printchar(char c);
+void mx_printerr(const char *s);
+void mx_printerrch(const char c);
+void mx_printerrn(const char *s, int n);
+void mx_printint(int n);
+void mx_printstr(const char *s);
+
 // My
 int mx_get_digits_count(int num);
 char *mx_strchr(const char *s, int c);
@@ -27,22 +36,22 @@ int mx_atoi(const char *str);
 int mx_strarr_len(char **strarr);
 bool mx_isdigit(int c);
 int mx_iterative_search(char **strings, int count, char *searching);
-void mx_printerr(const char *s);
+
 bool mx_num_in_str_is_positive(char *str);
 void mx_free_str_arr(char ***str_arr);
 bool mx_isalpha(int c);
-void mx_printerrn(const char *s, int n);
-void mx_printerrch(const char c);
+
+
 char *mx_strchr_last(const char *s, int c);
 void mx_reverse_array(char **strarr);
 
 // Need
-void mx_printchar(char c);
+
 // INCORRECT
-// void mx_print_unicode(wchar_t c);
-void mx_printstr(const char *s);
-void mx_print_strarr(char **arr, const char *delim);
-void mx_printint(int n);
+
+
+
+
 double mx_pow(double n, unsigned int pow);
 int mx_sqrt(int x);
 char *mx_nbr_to_hex(unsigned long nbr);
