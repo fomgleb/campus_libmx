@@ -79,4 +79,3 @@ int mx_sqrt(int x);
 unsigned long mx_hex_to_nbr(const char *hex);
 void mx_foreach(int *arr, int size, void (*f)(int));
 void mx_swap_char(char *s1, char *s2);
-int mx_read_line(char **lineptr, size_t buf_size, char delim, const int fd); // In progress
