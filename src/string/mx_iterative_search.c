@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "../../inc/libmx.h"
 
 int mx_iterative_search(char **strings, int count, char *searching) {
     if (strings == NULL || searching == NULL) {

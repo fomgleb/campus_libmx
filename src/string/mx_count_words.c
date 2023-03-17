@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "../../inc/libmx.h"
 
 int mx_count_words(const char *str, char с) {
 	if (str == NULL) {

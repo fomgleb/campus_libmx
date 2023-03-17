@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "../../inc/libmx.h"
 
 char *mx_strchr_last(const char *s, int c) {
     char *last_pointer = NULL;

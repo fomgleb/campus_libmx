@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "../../inc/libmx.h"
 
 int mx_atoi(const char *str) {
 	bool is_negative = false;

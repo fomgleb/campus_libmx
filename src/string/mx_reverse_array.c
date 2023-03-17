@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "../../inc/libmx.h"
 
 void mx_reverse_array(char **strarr) {
 	char *temp;

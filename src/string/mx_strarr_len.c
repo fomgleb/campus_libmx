@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "../../inc/libmx.h"
 
 int mx_strarr_len(char **strarr) {
     if (strarr == NULL) {

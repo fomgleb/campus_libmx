@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "../../inc/libmx.h"
 
 bool mx_num_in_str_is_positive(char *str) {
     if (str == NULL)

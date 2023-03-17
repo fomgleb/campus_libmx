@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "../../inc/libmx.h"
 
 char *mx_itoa(int number) {
 	bool is_negative = number < 0;
