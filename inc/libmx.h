@@ -50,6 +50,7 @@ void mx_printerr(const char *s);
 void mx_printerrch(const char c);
 void mx_printerrn(const char *s, int n);
 void mx_printint(int n);
+void mx_printnchar(char character, size_t count);
 void mx_printnstr(const char *string, size_t count);
 void mx_printstr(const char *s);
 
