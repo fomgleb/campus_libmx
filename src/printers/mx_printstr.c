@@ -1,7 +1,8 @@
 #include "../../inc/libmx.h"
 
-void mx_printstr(const char *s) {
-    int str_len = mx_strlen(s);
-    write(1, s, str_len);
+size_t mx_printstr(const char *const string) {
+    size_t string_length = mx_strlen(string);
+    write(STDOUT_FILENO, string, string_length);
+    return string_length;
 }
 

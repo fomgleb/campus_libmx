@@ -52,7 +52,7 @@ void mx_printerrn(const char *s, int n);
 void mx_printint(int n);
 void mx_printnchar(char character, size_t count);
 void mx_printnstr(const char *string, size_t count);
-void mx_printstr(const char *s);
+size_t mx_printstr(const char *const string);
 
 // String
 int mx_atoi(const char *str);
