@@ -1,11 +1,11 @@
 #include "../../inc/libmx.h"
 
-int mx_strlen(const char *s) {
-    if (s == NULL) {
+size_t mx_strlen(const char *const string) {
+    if (string == NULL) {
         return 0;
     }
-    int len = 0;
-    for ( ; s[len] != '\0'; len++) { }
-    return len;
+    size_t length = 0;
+    for ( ; string[length] != '\0'; length++) { }
+    return length;
 }
 

@@ -80,7 +80,7 @@ char *mx_strcpy(char *dst, const char *src);
 void mx_strdel(char **str);
 char *mx_strdup(const char *str);
 char *mx_strjoin(char const *s1, char const *s2);
-int mx_strlen(const char *s);
+size_t mx_strlen(const char *const string);
 int mx_strncmp(const char *s1, const char *s2, int n);
 char *mx_strncpy(char *dst, const char *src, int len);
 char *mx_strndup(const char *s1, size_t n);
